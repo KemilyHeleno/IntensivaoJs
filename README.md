@@ -8,7 +8,7 @@ Códigos das aulas para adquirir o certificado do curso
 
 ## Anotações
 * Sempre que possível usar o display: flex para o desenvolvimento de sites, pois assim o desing do site consegue se adaptar ao tamanho da tela em que o site está sendo acessado.
-* - De preferência usar o `flex flex-wrap` pois assim os itens que não couberem na mesma linha serão jogados para a linha de baixo, diminuindo o risco de distorção de imagens por  falta de espaço.
+ - De preferência usar o `flex flex-wrap` pois assim os itens que não couberem na mesma linha serão jogados para a linha de baixo, diminuindo o risco de distorção de imagens por  falta de espaço.
 
 * getElementById = Recupera um elemento a partir do id dele
 
