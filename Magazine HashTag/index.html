@@ -2,20 +2,50 @@
 <html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="./style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
   </head>
 
   <body>
-    <header><!-- Cabeçalho --></header>
+    <section
+      id="carrinho"
+      class="fixed top-0 right-[-360px] bg-black text-white h-screen w-[360px]"
+    >
+      <div id="cabecalho-carrinho" class="flex justify-between m-4">
+        <p>Meu Carrinho</p>
+        <button id="fechar-carrinho">
+          <i class="fa-solid fa-circle-xmark"></i>
+        </button>
+      </div>
+      <section id="produtos-carrinho">
+        <p>a</p>
+        <p>b</p>
+        <p>c</p>
+      </section>
+      <p id="preco-total">R$ 200,00</p>
+      <button class="bg-slate-200 text-slate-900 p-1">Finalizar Compra</button>
+    </section>
+    <header class="flex justify-between bg-black h-14 p-2">
+      <img src="./assets/logo/logo.jfif" alt="logo da shein" />
+      <div class="flex items-end text-slate-200 gap-2 mx-2">
+        <button id="abrir-carrinho"><i class="fa-solid fa-cart-shopping"></i></button>
+        <button><i class="fa-solid fa-user"></i></button>
+      </div>
+    </header>
     <main>
       <!-- parte principal da página inicial -->
-      <section id="container-produto">
+      <section id="container-produto" class="flex flex-wrap">
         <!-- Seção importante -->
       </section>
     </main>
-    <script src="./main.js"></script>
+    <script type="module" src="./main.js"></script>
   </body>
 </html>
