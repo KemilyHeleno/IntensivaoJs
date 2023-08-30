@@ -7,5 +7,5 @@ Códigos das aulas para adquirir o certificado do curso
 
 ## Links importantes
 
-[vite] (https://vitejs.dev/) - site usado como servidor local para o site rodar enquanto é programado.
+[vite](https://vitejs.dev/) - site usado como servidor local para o site rodar enquanto é programado.
 
