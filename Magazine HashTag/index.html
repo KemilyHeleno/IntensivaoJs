@@ -14,10 +14,10 @@
     />
   </head>
 
-  <body>
+  <body class="bg-stone-200 "> <!--flex flex-col -->
     <section
       id="carrinho"
-      class="fixed top-0 right-[-360px] bg-black text-white h-screen w-[360px]"
+      class="fixed top-0 right-[-360px] bg-black text-white h-screen w-[360px] z-50"
     >
       <div id="cabecalho-carrinho" class="flex justify-between m-4">
         <p>Meu Carrinho</p>
@@ -33,7 +33,7 @@
       <p id="preco-total">R$ 200,00</p>
       <button class="bg-slate-200 text-slate-900 p-1">Finalizar Compra</button>
     </section>
-    <header class="flex justify-between bg-black h-14 p-2">
+    <header class="flex justify-between bg-black shadow-md shadow-slate-900 h-14 px-2 py-2 sticky top-0">
       <img src="./assets/logo/logo.jfif" alt="logo da shein" />
       <div class="flex items-end text-slate-200 gap-2 mx-2">
         <button id="abrir-carrinho"><i class="fa-solid fa-cart-shopping"></i></button>
@@ -42,7 +42,7 @@
     </header>
     <main>
       <!-- parte principal da página inicial -->
-      <section id="container-produto" class="flex flex-wrap">
+      <section id="container-produto" class="flex flex-wrap p-10 justify-center gap-10">
         <!-- Seção importante -->
       </section>
     </main>
