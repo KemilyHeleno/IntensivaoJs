@@ -7,6 +7,8 @@ Códigos das aulas para adquirir o certificado do curso
 * Aula 02 - 29/08/2023 - **CSS2908**
 * Aula 03 - 30/08/2023 - **MAGAZINEHASH**
 * Aula 04 - 31/08/2023 - **INTENSIVOJS15**
+* Aula 05 - 01/09/2023 - **GITHUB10**
+02:06:28
 
 ## Anotações
 * Sempre que possível usar o display: flex para o desenvolvimento de sites, pois assim o desing do site consegue se adaptar ao tamanho da tela em que o site está sendo acessado.

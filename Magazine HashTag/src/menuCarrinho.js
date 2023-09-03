@@ -1,6 +1,6 @@
-import { catalogo } from "./utilidades";
+import { catalogo, salvarLocalStorage, lerLocalStorage } from "./utilidades";
 
-const idsProdCarComQuant = {};
+const idsProdCarComQuant = lerLocalStorage("carrinho") ?? {};
 
 function abrirCarrinho() {
   document.getElementById("carrinho").classList.add("right-[0px]");
@@ -14,12 +14,21 @@ function fecharCarrinho() {
   console.log("Fecha");
 }
 
+function irParaCheckout() {
+  if (Object.keys(idsProdCarComQuant).length === 0) {
+    return;
+  }
+  window.location.href = window.location.origin + "/checkout.html";
+}
+
 export function inicializarCarrinho() {
   const botaoFecharCarrinho = document.getElementById("fechar-carrinho");
   const botaoAbrirCarrinho = document.getElementById("abrir-carrinho");
+  const botaoIrParaCheckout = document.getElementById("finalizar-compra");
 
   botaoFecharCarrinho.addEventListener("click", fecharCarrinho);
   botaoAbrirCarrinho.addEventListener("click", abrirCarrinho);
+  botaoIrParaCheckout.addEventListener("click", irParaCheckout);
 }
 
 function desenharProdNoCarrinho(idProduto) {
@@ -78,7 +87,7 @@ function desenharProdNoCarrinho(idProduto) {
     .addEventListener("click", () => removeDoCarrinho(produto.id));
 }
 
-function renderizarProdCar() {
+export function renderizarProdCar() {
   const containerProdutosCarrinho =
     document.getElementById("produtos-carrinho");
   containerProdutosCarrinho.innerHTML = "";
@@ -90,12 +99,16 @@ function renderizarProdCar() {
 
 function removeDoCarrinho(idProduto) {
   delete idsProdCarComQuant[idProduto];
+  salvarLocalStorage("carrinho", idsProdCarComQuant);
   renderizarProdCar();
+  atualizarPrecoCarrinho();
 }
 
 function incrementarQuantProd(idProduto) {
   idsProdCarComQuant[idProduto]++;
+  salvarLocalStorage("carrinho", idsProdCarComQuant);
   atualizarInfoQuant(idProduto);
+  atualizarPrecoCarrinho();
 }
 
 function decrementarQuantProd(idProduto) {
@@ -104,7 +117,9 @@ function decrementarQuantProd(idProduto) {
     return;
   }
   idsProdCarComQuant[idProduto]--;
+  salvarLocalStorage("carrinho", idsProdCarComQuant);
   atualizarInfoQuant(idProduto);
+  atualizarPrecoCarrinho();
 }
 
 function atualizarInfoQuant(idProduto) {
@@ -119,5 +134,18 @@ export function adicionarAoCarrinho(idProduto) {
     return;
   }
   idsProdCarComQuant[idProduto] = 1;
+  salvarLocalStorage("carrinho", idsProdCarComQuant);
   desenharProdNoCarrinho(idProduto);
+  atualizarPrecoCarrinho();
+}
+
+export function atualizarPrecoCarrinho() {
+  const precoCarrinho = document.getElementById("preco-total");
+  let precoTotalCarrinho = 0;
+  for (const idProdutoCarrinho in idsProdCarComQuant) {
+    precoTotalCarrinho +=
+      catalogo.find((p) => p.id === idProdutoCarrinho).preco *
+      idsProdCarComQuant[idProdutoCarrinho];
+  }
+  precoCarrinho.innerText = `Total: R$ ${precoTotalCarrinho}`;
 }
