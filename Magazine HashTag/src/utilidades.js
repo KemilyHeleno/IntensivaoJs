@@ -71,8 +71,8 @@ export function lerLocalStorage(chave) {
   */
 }
 
-export function apagarDoLocalStorage(chave){
-
+export function apagarDoLocalStorage(chave) {
+  localStorage.removeItem(chave);
 }
 
 export function desenharProdCarrinhoSimples(
@@ -90,7 +90,7 @@ export function desenharProdCarrinhoSimples(
     "rounded-lg",
     "p-1",
     "relative",
-    "mb-2"
+    "mb-2",
   ];
   // <article class="flex bg-slate-100 rounded-lg relative">
 
@@ -116,5 +116,7 @@ export function desenharProdCarrinhoSimples(
 
   elementoArticle.innerHTML = cartaoProdutoCarrinho;
 
-  containerProdutosCarrinho.appendChild(elementoArticle);
+  if (elementoArticle !== null) {
+    containerProdutosCarrinho.appendChild(elementoArticle);
+  }
 }
