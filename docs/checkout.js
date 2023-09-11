@@ -15,7 +15,7 @@ function desenharProdutosCheckout() {
       idsProdCarComQuant[idProduto]
     );
   }
-}//
+} //
 
 function finalizarCompra(evento) {
   evento.preventDefault();
@@ -40,6 +40,5 @@ function finalizarCompra(evento) {
 
 desenharProdutosCheckout();
 atualizarPrecoCarrinho();
-
 
 document.addEventListener("submit", (evt) => finalizarCompra(evt));
